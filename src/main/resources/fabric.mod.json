@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+
+  "name": "Template Mod",
+  "description": "Template Mod [CHANGE_ME]",
+  "authors": [
+    "70CentsApple"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/[CHANGE_ME]",
+    "sources": "https://github.com/70CentsApple/[CHANGE_ME]",
+    "issues": "https://github.com/70CentsApple/[CHANGE_ME]/issues",
+    "bilibili": "https://space.bilibili.com/442361724"
+  },
+
+  "license": "GPL-3.0",
+  "icon": "icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "net.apple70cents.templatemod.TemplateMod"
+    ],
+    "modmenu": [
+      "net.apple70cents.templatemod.config.ModMenuScreen"
+    ]
+  },
+  "mixins": [
+    "template_mod.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.4",
+    "{{FABRIC_API}}": "*",
+    "{{CLOTH_CONFIG}}": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.modrinth": "https://modrinth.com/mod/[CHANGE_ME]"
+      }
+    }
+  }
+}

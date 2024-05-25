@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "content": [
+        {
+            "key": "category.general",
+            "content": [
+                {
+                    "type": "boolean",
+                    "key": "general.TemplateMod.Enabled"
+                }
+            ]
+        }
+    ]
+}

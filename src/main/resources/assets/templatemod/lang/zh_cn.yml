@@ -1,0 +1,15 @@
+modmenu.nameTranslation.template_mod: 示例模组
+modmenu.descriptionTranslation.template_mod: 示例模组简介 [CHANGE_ME]
+key:
+  template_mod:
+    gui:
+      title: 示例模组 配置菜单
+      defaultValue: 默认：%s
+      variableType: 类型：%s
+    category:
+      general: 通用
+    general:
+      TemplateMod:
+        Enabled:
+          .: 启用示例模组
+          '@Tooltip': 切换整个模组的开关。

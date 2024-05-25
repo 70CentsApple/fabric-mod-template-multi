@@ -1,0 +1,15 @@
+modmenu.nameTranslation.template_mod: Template Mod
+modmenu.descriptionTranslation.template_mod: Template Mod [CHANGE_ME]
+key:
+  template_mod:
+    gui:
+      title: Template Mod Configuration
+      defaultValue: 'Default: %s'
+      variableType: 'Variable Type: %s'
+    category:
+      general: General
+    general:
+      TemplateMod:
+        Enabled:
+          .: Enable Template Mod
+          '@Tooltip': Toggles the entire mod.
