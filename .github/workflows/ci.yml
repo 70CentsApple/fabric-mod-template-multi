@@ -1,8 +1,26 @@
 name: build
-on: [pull_request, push]
+on: [ pull_request, push ]
 
 jobs:
+  commit-checker:
+    runs-on: ubuntu-latest
+    outputs:
+      skip_build: ${{ steps.check.outputs.skip_build }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check commit message
+        id: check
+        run: |
+          if git log -1 --pretty=%B | grep -q '\[skip ci\]'; then
+            echo "skip_build=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip_build=false" >> $GITHUB_OUTPUT
+          fi
+
   build:
+    needs: commit-checker
+    if: needs.commit_checker.outputs.skip_build == 'false'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +55,6 @@ jobs:
     runs-on: ubuntu-22.04
     needs:
       - build
-
     steps:
       - uses: actions/checkout@v4
 
